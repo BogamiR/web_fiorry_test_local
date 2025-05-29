@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true">
+        <layer-list>
+            <item
+                android:drawable="@drawable/ic_top_bar_radio_button_background"
+                android:gravity="center" />
+            <item
+                android:width="24dp"
+                android:height="24dp"
+                android:drawable="@drawable/ic_top_bar_swipe_icon"
+                android:gravity="center" />
+        </layer-list>
+    </item>
+
+    <item android:state_checked="false">
+        <layer-list>
+            <item
+                android:width="24dp"
+                android:height="24dp"
+                android:drawable="@drawable/ic_top_bar_swipe_icon_disabled"
+                android:gravity="center" />
+        </layer-list>
+    </item>
+</selector>

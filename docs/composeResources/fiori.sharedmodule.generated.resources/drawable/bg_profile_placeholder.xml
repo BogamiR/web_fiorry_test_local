@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/main_color_background_app_bar" />
+    <item
+        android:bottom="60dp"
+        android:width="58dp"
+        android:height="58dp"
+        android:drawable="@drawable/ic_color_profile_placeholder"
+        android:left="38dp"
+        android:right="38dp"
+        android:top="60dp" />
+</layer-list>

@@ -1,0 +1,42 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="209dp"
+    android:height="213dp"
+    android:viewportWidth="209"
+    android:viewportHeight="213">
+  <path
+      android:strokeWidth="1"
+      android:pathData="M172.607,139.998C172.522,137.238 170.215,135.069 167.455,135.154C164.695,135.239 162.527,137.545 162.611,140.305C162.696,143.065 165.003,145.234 167.763,145.149C170.523,145.064 172.692,142.758 172.607,139.998Z"
+      android:fillColor="#00000000"
+      android:fillType="evenOdd"
+      android:strokeColor="#FABED1"/>
+  <path
+      android:strokeWidth="1"
+      android:pathData="M45.198,187.175C47.018,187.983 47.208,190.49 45.532,191.564L42.02,193.814C40.427,194.835 38.322,193.785 38.179,191.899L37.879,187.956C37.736,186.069 39.658,184.713 41.387,185.481L45.198,187.175Z"
+      android:fillColor="#00000000"
+      android:strokeColor="#7A6FFF"/>
+  <path
+      android:pathData="M136.4,11.385l0.259,0.966l15.455,-4.141l-0.259,-0.966z"
+      android:fillColor="#7A6FFF"/>
+  <path
+      android:pathData="M145.844,17.655l0.966,-0.259l-4.141,-15.455l-0.966,0.259z"
+      android:fillColor="#7A6FFF"/>
+  <path
+      android:pathData="M104.5,213C162.214,213 209,166.214 209,108.5C209,50.786 162.214,4 104.5,4C46.786,4 0,50.786 0,108.5C0,166.214 46.786,213 104.5,213Z"
+      android:fillAlpha="0.03">
+    <aapt:attr name="android:fillColor">
+      <gradient 
+          android:startY="-73.5923"
+          android:startX="200.822"
+          android:endY="15.5241"
+          android:endX="-93.5774"
+          android:type="linear">
+        <item android:offset="0" android:color="#FF322CCE"/>
+        <item android:offset="1" android:color="#FFF12062"/>
+      </gradient>
+    </aapt:attr>
+  </path>
+  <path
+      android:pathData="M105,169C139.794,169 168,140.794 168,106C168,71.206 139.794,43 105,43C70.206,43 42,71.206 42,106C42,140.794 70.206,169 105,169Z"
+      android:fillColor="@color/main_color_background_app_bar"/>
+</vector>

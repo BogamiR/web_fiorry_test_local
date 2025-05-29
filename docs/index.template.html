@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamTek Web</title>
+
+    <!-- ✅ Add SDKs BEFORE your module -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <script type="module" src="stripeInterop.js"></script>
+    <script type="module" src="recaptchaInterop.js"></script>
+    <script type="module" src="databaseInterop.js"></script>
+
+    <!-- Styles -->
+    <link type="text/css" rel="stylesheet" href="styles.css">
+    <link type="text/css" rel="stylesheet" href="stylesStripe.css">
+    <link type="text/css" rel="stylesheet" href="stylesStripeChoose.css">
+    <link type="text/css" rel="stylesheet" href="stylesCaptcha.css">
+
+    <!-- Kotlin Wasm JS File from Web Module -->
+    <script type="application/javascript" src="webModule.js"></script>
+</head>
+<body>
+
+<!-- include:screens/payment-screen.html -->
+<!-- include:screens/payment-chooser.html -->
+<!-- include:screens/captcha-screen.html -->
+
+</body>
+</html>
