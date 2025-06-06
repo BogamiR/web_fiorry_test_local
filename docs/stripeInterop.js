@@ -38,13 +38,13 @@ export async function payWithGoogleOrApple(amountInCents, currency, countryCode,
 
     const result = await paymentRequest.canMakePayment();
 
-        document.getElementById("google-pay-button-container").style.display = "block";
     if (result?.googlePay) {
+        document.getElementById("google-pay-button-container").style.display = "block";
         googleCallback = onGooglePay;
     }
 
-        document.getElementById("apple-pay-button-container").style.display = "block";
     if (result?.applePay) {
+        document.getElementById("apple-pay-button-container").style.display = "block";
         appleCallback = onApplePay;
     }
 
@@ -61,9 +61,9 @@ export async function payWithGoogleOrApple(amountInCents, currency, countryCode,
 }
 
 export function triggerGooglePay() {
-    //paymentRequest.show();
+    paymentRequest.show();
 }
 
 export function triggerApplePay() {
-    //paymentRequest.show();
+    paymentRequest.show();
 }
