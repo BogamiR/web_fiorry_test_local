@@ -1,23 +1,25 @@
 <script>
+    function fixViewportHeight() {
+        document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+    }
+
+    window.addEventListener('resize', fixViewportHeight);
+    fixViewportHeight();
+
     function getIOSVersion() {
         const userAgent = navigator.userAgent;
         const isIOS = /iPhone|iPad|iPod/.test(userAgent) && !window.MSStream;
-        const isSafari = /Safari/.test(userAgent) && !/Chrome|CriOS|FxiOS/.test(userAgent);
 
         console.log("DEBUG: User-Agent:", userAgent);
         console.log("DEBUG: isIOS:", isIOS);
-        console.log("DEBUG: isSafari:", isSafari);
 
-        if (isIOS && isSafari) {
+        if (isIOS) {
             const match = userAgent.match(/OS (\d+)_(\d+)_?(\d+)?/);
-            console.log("DEBUG: iOS regex match:", match);
             if (match && match.length > 2) {
                 const version = parseFloat(match[1] + '.' + match[2]);
-                console.log("DEBUG: Detected iOS version:", version);
                 return version;
             }
         }
-        console.log("DEBUG: Not iOS Safari or version not found, returning 0.");
         return 0;
     }
 
@@ -28,16 +30,17 @@
         if (loaderContainer) loaderContainer.style.display = 'flex';
         if (unsupportedBanner) unsupportedBanner.style.display = 'none';
 
+        const isIOS = /iPhone|iPad|iPod/.test(userAgent) && !window.MSStream;
+        if (!isIOS) { return; }
+
         const requiredIOSVersion = 18.2;
         const currentIOSVersion = getIOSVersion();
 
         console.log(`DEBUG: Checking iOS version: Current=${currentIOSVersion}, Required=${requiredIOSVersion}`);
 
         if (currentIOSVersion > 0 && currentIOSVersion < requiredIOSVersion) {
-            console.log("DEBUG: Unsupported iOS Safari version detected. Showing banner.");
             if (loaderContainer) loaderContainer.style.display = 'none';
             if (unsupportedBanner) unsupportedBanner.style.display = 'flex';
-            console.warn(`Unsupported iOS version. Current: ${currentIOSVersion}, Required: ${requiredIOSVersion}. Displaying warning banner.`);
             return;
         }
     });

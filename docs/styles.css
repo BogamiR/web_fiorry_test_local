@@ -3,8 +3,22 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overscroll-behavior: none;
     overflow: hidden;
+    position: fixed;
     background-color: #0D0919
+}
+
+canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+body {
+    height: calc(var(--vh, 1vh) * 100);
 }
 
 #loader-container {
