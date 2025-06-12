@@ -1,11 +1,4 @@
 <script>
-    function fixViewportHeight() {
-        document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
-    }
-
-    window.addEventListener('resize', fixViewportHeight);
-    fixViewportHeight();
-
     function getIOSVersion() {
         const userAgent = navigator.userAgent;
         const isIOS = /iPhone|iPad|iPod/.test(userAgent) && !window.MSStream;

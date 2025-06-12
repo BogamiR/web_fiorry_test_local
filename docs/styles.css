@@ -3,9 +3,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overscroll-behavior: none;
     overflow: hidden;
-    position: fixed;
     background-color: #0D0919
 }
 
@@ -17,8 +15,14 @@ canvas {
     max-height: 100%;
 }
 
-body {
-    height: calc(var(--vh, 1vh) * 100);
+#compose-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 2;
 }
 
 #loader-container {
@@ -31,7 +35,7 @@ body {
     position: fixed;         /* Фиксированное положение */
     top: 0;
     left: 0;
-    z-index: 9999;           /* Убедимся, что лоадер поверх всего */
+    z-index: 1;           /* Убедимся, что лоадер поверх всего */
 }
 
 .loader {
@@ -65,7 +69,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    z-index: 10000;
+    z-index: 10;
     border-radius: 8px;
 }
 

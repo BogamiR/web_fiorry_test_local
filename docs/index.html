@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>DreamTek Web</title>
 
     <!-- ✅ Add SDKs BEFORE your module -->
@@ -31,6 +31,8 @@
 <div id="loader-container">
     <div class="loader"></div>
 </div>
+
+<div id="compose-container"></div>
 
 <div id="unsupported-banner" style="display: none;">
     <p>Unfortunately, this website requires a newer version of iOS to function properly.</p>
@@ -76,16 +78,8 @@
     <div id="captcha-content" class="captcha-content"></div>
 </div>
 
-<div id="compose-container"></div>
 
 <script>
-    function fixViewportHeight() {
-        document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
-    }
-
-    window.addEventListener('resize', fixViewportHeight);
-    fixViewportHeight();
-
     function getIOSVersion() {
         const userAgent = navigator.userAgent;
         const isIOS = /iPhone|iPad|iPod/.test(userAgent) && !window.MSStream;
