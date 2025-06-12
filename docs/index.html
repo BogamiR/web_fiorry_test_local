@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>DreamTek Web</title>
 
+    <script>
+    function setVH() {
+        document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+    }
+    window.addEventListener('resize', setVH);
+    window.addEventListener('orientationchange', setVH);
+    window.addEventListener('load', setVH);
+    setVH();
+</script>
+
+
     <!-- ✅ Add import SDKs BEFORE your module -->
     <script src="https://js.stripe.com/v3/"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -77,16 +88,6 @@
     <div id="captcha-content" class="captcha-content"></div>
 </div>
 
-
-<script>
-    function setVH() {
-        document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
-    }
-    window.addEventListener('resize', setVH);
-    window.addEventListener('orientationchange', setVH);
-    window.addEventListener('load', setVH);
-    setVH();
-</script>
 
 <script>
     function getIOSVersion() {
