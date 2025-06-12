@@ -1,8 +1,5 @@
 // galleryInterop.js
 
-// Log that the module is loaded (for debugging)
-console.log("galleryInterop.js: Module loaded as an ES module.");
-
 // Define the object that will be exported as the default
 export function selectImage(onSuccess, onError) {
     console.log("galleryInterop.js: selectImage: Called from Kotlin.");

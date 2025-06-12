@@ -28,6 +28,16 @@
 </head>
 <body>
 
+<div id="loader-container">
+    <div class="loader"></div>
+</div>
+
+<div id="unsupported-banner">
+    <p>Unfortunately, this website requires a newer version of iOS to function properly.</p>
+    <p>Please update your operating system.</p>
+    <div class="version-info">iOS 18.2 or later is required.</div>
+</div>
+
 <div id="payment-screen" class="container">
     <div class="inner-container">
         <div id="card-element" class="card-box"></div>
@@ -67,6 +77,51 @@
 </div>
 
 <div id="compose-container"></div>
+
+<script>
+    function getIOSVersion() {
+        const userAgent = navigator.userAgent;
+        const isIOS = /iPhone|iPad|iPod/.test(userAgent) && !window.MSStream;
+        const isSafari = /Safari/.test(userAgent) && !/Chrome|CriOS|FxiOS/.test(userAgent);
+
+        console.log("DEBUG: User-Agent:", userAgent);
+        console.log("DEBUG: isIOS:", isIOS);
+        console.log("DEBUG: isSafari:", isSafari);
+
+        if (isIOS && isSafari) {
+            const match = userAgent.match(/OS (\d+)_(\d+)_?(\d+)?/);
+            console.log("DEBUG: iOS regex match:", match);
+            if (match && match.length > 2) {
+                const version = parseFloat(match[1] + '.' + match[2]);
+                console.log("DEBUG: Detected iOS version:", version);
+                return version;
+            }
+        }
+        console.log("DEBUG: Not iOS Safari or version not found, returning 0.");
+        return 0;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const loaderContainer = document.getElementById('loader-container');
+        const unsupportedBanner = document.getElementById('unsupported-banner');
+
+        if (loaderContainer) loaderContainer.style.display = 'flex';
+        if (unsupportedBanner) unsupportedBanner.style.display = 'none';
+
+        const requiredIOSVersion = 18.2;
+        const currentIOSVersion = getIOSVersion();
+
+        console.log(`DEBUG: Checking iOS version: Current=${currentIOSVersion}, Required=${requiredIOSVersion}`);
+
+        if (currentIOSVersion > 0 && currentIOSVersion < requiredIOSVersion) {
+            console.log("DEBUG: Unsupported iOS Safari version detected. Showing banner.");
+            if (loaderContainer) loaderContainer.style.display = 'none';
+            if (unsupportedBanner) unsupportedBanner.style.display = 'flex';
+            console.warn(`Unsupported iOS version. Current: ${currentIOSVersion}, Required: ${requiredIOSVersion}. Displaying warning banner.`);
+            return;
+        }
+    });
+</script>
 
 </body>
 </html>

@@ -4,4 +4,67 @@ html, body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    background-color: #0D0919
+}
+
+#loader-container {
+    display: flex; /* Используем flexbox для центрирования */
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center;     /* Центрирование по вертикали */
+    height: 100vh;           /* Высота на весь экран */
+    width: 100vw;            /* Ширина на весь экран */
+    background-color: inherit; /* Используем тот же фон, что и у body */
+    position: fixed;         /* Фиксированное положение */
+    top: 0;
+    left: 0;
+    z-index: 9999;           /* Убедимся, что лоадер поверх всего */
+}
+
+.loader {
+    border: 8px solid rgba(255, 255, 255, 0.3); /* Светлый полупрозрачный круг */
+    border-top: 8px solid #FFFFFF; /* Белый цвет для анимированной части */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite; /* Анимация вращения */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#unsupported-banner {
+    display: none; /* Изначально скрыт */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9); /* Темный полупрозрачный фон */
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 10000;
+    border-radius: 8px;
+}
+
+#unsupported-banner p {
+    max-width: 80%;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+#unsupported-banner .version-info {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #FFC107;
+    margin-top: 10px;
+    border-radius: 8px;
 }

@@ -1,8 +1,5 @@
 // cameraInterop.js
 
-// Log that the module is loaded (for debugging)
-console.log("cameraInterop.js: Module loaded as an ES module.");
-
 // Define the object that will be exported as the default
 export function takePhoto(onSuccess, onError) { // Now accepts onSuccess and onError callbacks
     console.log("cameraInterop.js: takePhoto: Called from Kotlin.");
