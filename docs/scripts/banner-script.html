@@ -1,17 +1,9 @@
 <script>
     function getIOSVersion() {
-        const userAgent = navigator.userAgent;
-        const isIOS = /iPhone|iPad|iPod/.test(userAgent) && !window.MSStream;
-
-        console.log("DEBUG: User-Agent:", userAgent);
-        console.log("DEBUG: isIOS:", isIOS);
-
-        if (isIOS) {
-            const match = userAgent.match(/OS (\d+)_(\d+)_?(\d+)?/);
-            if (match && match.length > 2) {
-                const version = parseFloat(match[1] + '.' + match[2]);
-                return version;
-            }
+        const match = userAgent.match(/OS (\d+)_(\d+)_?(\d+)?/);
+        if (match && match.length > 2) {
+            const version = parseFloat(match[1] + '.' + match[2]);
+            return version;
         }
         return 0;
     }
@@ -23,7 +15,12 @@
         if (loaderContainer) loaderContainer.style.display = 'flex';
         if (unsupportedBanner) unsupportedBanner.style.display = 'none';
 
+        const userAgent = navigator.userAgent;
         const isIOS = /iPhone|iPad|iPod/.test(userAgent) && !window.MSStream;
+
+        console.log("DEBUG: User-Agent:", userAgent);
+        console.log("DEBUG: isIOS:", isIOS);
+
         if (!isIOS) { return; }
 
         const requiredIOSVersion = 18.2;
