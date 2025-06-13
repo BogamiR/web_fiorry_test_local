@@ -1,6 +1,6 @@
 <script>
     function getIOSVersion() {
-        const match = userAgent.match(/OS (\d+)_(\d+)_?(\d+)?/);
+        const match = navigator.userAgent.match(/OS (\d+)_(\d+)_?(\d+)?/);
         if (match && match.length > 2) {
             const version = parseFloat(match[1] + '.' + match[2]);
             return version;

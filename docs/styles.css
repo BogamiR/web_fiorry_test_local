@@ -7,28 +7,16 @@ html, body {
     background-color: #0D0919
 }
 
-canvas {
-    display: block;
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    margin: 0 auto;
-}
-
-
 #compose-container {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+    height: 100%;
     overflow: hidden;
-    z-index: 2;
-
-    margin: 0 auto;
-    right: 0;
-    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #loader-container {
@@ -59,13 +47,13 @@ canvas {
 }
 
 #unsupported-banner {
-    display: none; /* Изначально скрыт */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.9); /* Темный полупрозрачный фон */
+    background-color: rgba(0, 0, 0, 0.8); /* Темный полупрозрачный фон */
     color: #FFFFFF;
     font-size: 1.2rem;
     padding: 20px;
