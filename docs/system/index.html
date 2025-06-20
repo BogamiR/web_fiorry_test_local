@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Stage Fiorry</title>
+    <link href="/favicon.ico" rel="icon">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+                            
+    <div id="full-screen-loader" style="                             position: fixed;                             top: 0;                             left: 0;                             width: 100vw;                             height: 100vh;                             display: flex;                             justify-content: center;                             align-items: center;                             background-color: rgb(13, 9, 25);                             z-index: 2147483647;                             transition: opacity 0.5s ease-out, visibility 0s 0.5s;                         ">
+                                  
+      <div style="                                 width: 10vmin; /* Задаем ширину обертки */                                 padding-bottom: 10vmin; /* Делаем обертку квадратной */                                 position: relative; /* Необходимо для position: absolute дочернего элемента */                             ">
+                                        
+        <div class="spinner" style="                                     border: 8px solid rgba(255, 255, 255, 0.3);                                     border-top: 8px solid #FFFFFF;                                     border-radius: 50%;                                     width: 6rem;                                     aspect-ratio: 1 / 1;                                     height: auto;                                     animation: spin 1s linear infinite;                                     box-sizing: border-box;                                 "></div>
+                                    
+      </div>
+                                  
+    </div>
+                        
+    <style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #0D0919;
+    }
+                            
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
+    <script>
+                            window.hideLoader = function() {
+                                const loader = document.getElementById('full-screen-loader');
+                                if (loader) {
+                                    loader.style.opacity = '0';
+                                    loader.addEventListener('transitionend', function() {
+                                        loader.style.visibility = 'hidden';
+                                    }, { once: true });
+                                } else {
+                                    console.warn('hideLoader called but loader element not found!');
+                                }
+                            };
+                        </script>
+  </head>
+  <body>
+    <div id="_kobweb-root" style="width: 100%; height: 100%;"></div>
+    <script src="/web.js"></script>
+  </body>
+</html>
